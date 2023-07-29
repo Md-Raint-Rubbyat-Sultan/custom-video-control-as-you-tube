@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -233,18 +235,23 @@ video {
   display: none;
 }
 
+/* if you have preview images just block the display of time-lines given below */
+
 .video-container.scrubbing .thumbnail-img {
-  display: block;
+  display: none;
+  /* display: block; */
 }
 
 .video-container.scrubbing .preview-img,
 .timeline-container:hover .preview-img {
-  display: block;
+  display: none;
+  /* display: block; */
 }
 
 .video-container.scrubbing .timeline::before,
 .timeline-container:hover .timeline::before {
-  display: block;
+  display: none;
+  /* display: block; */
 }
 
 .video-container.scrubbing .thumb-indicator,
@@ -255,4 +262,20 @@ video {
 .video-container.scrubbing .timeline,
 .timeline-container:hover .timeline {
   height: 100%;
+}
+
+@media screen and (max-width:425px) {
+
+  .mini-player-btn,
+  .theater-btn {
+    display: none;
+  }
+}
+
+
+/* Media query for tablet device */
+@media screen and (min-width:425px) and (max-width: 786px) {
+  .mini-player-btn {
+    display: none;
+  }
 }
